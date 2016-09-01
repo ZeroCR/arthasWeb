@@ -18,8 +18,6 @@ class Content extends Component {
   };
 
   static propTypes = {
-    path: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired,
     title: PropTypes.string,
   };
 
@@ -35,8 +33,7 @@ class Content extends Component {
     return (
       <div className={s.root}>
         <div className={s.container}>
-          {this.props.path === '/' ? null : <h1>{this.props.title}</h1>}
-          <div dangerouslySetInnerHTML={{ __html: this.props.content || '' }} />
+          <h1>{this.props.title}</h1>
         </div>
       </div>
     );

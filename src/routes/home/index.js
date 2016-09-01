@@ -12,9 +12,9 @@ import Home from './Home';
 
 export default {
 
-  path: '/',
+  path: '/home',
 
-  async action() {
+  action() {
     return <Home />;
   },
 

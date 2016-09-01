@@ -12,9 +12,9 @@ import path from 'path';
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
-import expressJwt from 'express-jwt';
-import expressGraphQL from 'express-graphql';
-import jwt from 'jsonwebtoken';
+// import expressJwt from 'express-jwt';
+// import expressGraphQL from 'express-graphql';
+// import jwt from 'jsonwebtoken';
 import React from 'react';
 import ReactDOM from 'react-dom/server';
 import Html from './components/Html';
@@ -22,15 +22,15 @@ import { ErrorPage } from './routes/error/ErrorPage';
 import errorPageStyle from './routes/error/ErrorPage.css';
 import UniversalRouter from 'universal-router';
 import PrettyError from 'pretty-error';
-import passport from './core/passport';
-import models from './data/models';
-import schema from './data/schema';
+// import passport from './core/passport';
+// import models from './data/models';
+// import schema from './data/schema';
 import routes from './routes';
 import createHistory from './core/createHistory';
 import assets from './assets'; // eslint-disable-line import/no-unresolved
 import configureStore from './store/configureStore';
 import { setRuntimeVariable } from './actions/runtime';
-import { port, auth } from './config';
+import { port } from './config';
 
 const app = express();
 
@@ -178,9 +178,9 @@ app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
 // Launch the server
 // -----------------------------------------------------------------------------
 /* eslint-disable no-console */
-models.sync().catch(err => console.error(err.stack)).then(() => {
-  app.listen(port, () => {
-    console.log(`The server is running at http://localhost:${port}/`);
-  });
+// models.sync().catch(err => console.error(err.stack)).then(() => {
+app.listen(port, () => {
+  console.log(`The server is running at http://localhost:${port}/`);
 });
+// });
 /* eslint-enable no-console */
