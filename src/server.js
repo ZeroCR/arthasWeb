@@ -22,9 +22,6 @@ import { ErrorPage } from './routes/error/ErrorPage';
 import errorPageStyle from './routes/error/ErrorPage.css';
 import UniversalRouter from 'universal-router';
 import PrettyError from 'pretty-error';
-// import passport from './core/passport';
-// import models from './data/models';
-// import schema from './data/schema';
 import routes from './routes';
 import createHistory from './core/createHistory';
 import assets from './assets'; // eslint-disable-line import/no-unresolved
