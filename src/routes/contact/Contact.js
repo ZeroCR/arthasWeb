@@ -10,8 +10,9 @@
 import React, { PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Contact.css';
+import User from '../../components/User/';
 
-const title = 'Contact Us';
+const title = 'Contact Us test';
 
 function Contact(props, context) {
   context.setTitle(title);
@@ -19,7 +20,7 @@ function Contact(props, context) {
     <div className={s.root}>
       <div className={s.container}>
         <h1>{title}</h1>
-        <p>...</p>
+        <User />
       </div>
     </div>
   );
