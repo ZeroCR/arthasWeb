@@ -157,3 +157,11 @@ $ git fetch react-starter-kit
 $ git merge react-starter-kit/master
 $ npm install
 ```
+#### Style Guide
+
+Our linter will catch most styling issues that may exist in your code. You can check the status
+of your code styling by simply running: `npm run lint`
+
+However, there are still some styles that the linter cannot pick up. If you are unsure about
+something, looking at [Airbnb's Style Guide](https://github.com/airbnb/javascript) will guide you
+in the right direction.
