@@ -21,7 +21,6 @@ Before you start, take a moment to see how the project structure looks like:
 │   ├── /components/            # React components
 │   ├── /content/               # Static pages like About Us, Privacy Policy etc.
 │   ├── /core/                  # Core framework and utility functions
-│   ├── /data/                  # GraphQL server schema and data models
 │   ├── /public/                # Static files which are copied into the /build/public folder
 │   ├── /routes/                # Page/screen components along with the routing information
 │   ├── /client.js              # Client-side startup script
@@ -51,18 +50,13 @@ commonly used Flux libraries are [Flux](http://facebook.github.io/flux/),
 
 #### 1. Get the latest version
 
-You can start by cloning the latest version of React Starter Kit (RSK) on your
+You can start by cloning the latest version on your
 local machine by running:
 
 ```shell
-$ git clone -o react-starter-kit -b master --single-branch \
-      https://github.com/kriasoft/react-starter-kit.git MyApp
+$ git clone https://github.com/ZeroCR/arthasWeb.git
 $ cd MyApp
 ```
-
-Alternatively, you can start a new project based on RSK right from
-[WebStorm IDE](https://www.jetbrains.com/webstorm/help/create-new-project-react-starter-kit.html),
-or by using [Yeoman generator](https://www.npmjs.com/package/generator-react-fullstack).
 
 #### 2. Run `npm install`
 
