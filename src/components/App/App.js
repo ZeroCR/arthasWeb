@@ -1,11 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import emptyFunction from 'fbjs/lib/emptyFunction';
 import s from './App.css';
-import Header from '../Header';
-import Feedback from '../Feedback';
-import Footer from '../Footer';
-import { Provider } from 'react-redux';
-
+// import Header from '../Header';
+// import Feedback from '../Feedback';
+// import Footer from '../Footer';
+import { Provider } from 'mobx-react';
+import Sidebar from '../Sidebar/Sidebar';
 class App extends Component {
 
   static propTypes = {
@@ -55,10 +55,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div>
-          <Header />
-          {this.props.children}
-          <Feedback />
-          <Footer />
+          <Sidebar />
         </div>
       </Provider>
     );

@@ -4,7 +4,7 @@ import FastClick from 'fastclick';
 import UniversalRouter from 'universal-router';
 import routes from './routes';
 import createHistory from './core/createHistory';
-import configureStore from './store/configureStore';
+import { createClientState } from './store/basicMobx';
 import { readState, saveState } from 'history/lib/DOMStateStorage';
 import {
   addEventListener,
@@ -83,17 +83,17 @@ function render(container, state, component) {
 function run() {
   const history = createHistory();
   const container = document.getElementById('app');
-  const initialState = JSON.parse(
-    document.
-      getElementById('source').
-      getAttribute('data-initial-state')
-  );
+  // const initialState = JSON.parse(
+  //   document.
+  //     getElementById('source').
+  //     getAttribute('data-initial-state')
+  // );
   let currentLocation = history.getCurrentLocation();
 
   // Make taps on links and buttons work fast on mobiles
   FastClick.attach(document.body);
 
-  context.store = configureStore(initialState, { history });
+  context.store = createClientState(window.__STATE); // eslint-disable-line no-underscore-dangle
   context.createHref = history.createHref;
 
   // Re-render the app when window.location changes

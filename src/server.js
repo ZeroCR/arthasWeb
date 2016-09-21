@@ -13,8 +13,8 @@ import PrettyError from 'pretty-error';
 import routes from './routes';
 import createHistory from './core/createHistory';
 import assets from './assets'; // eslint-disable-line import/no-unresolved
-import configureStore from './store/configureStore';
-import { setRuntimeVariable } from './actions/runtime';
+import { createServerState } from './store/basicMobx';
+// import { setRuntimeVariable } from './actions/runtime';
 import { port } from './config';
 
 const app = express();
@@ -56,15 +56,12 @@ app.get('*', async (req, res, next) => {
   });
 
   try {
-    const store = configureStore({}, {
-      cookie: req.headers.cookie,
-      history,
-    });
+    const store = createServerState();
 
-    store.dispatch(setRuntimeVariable({
-      name: 'initialNow',
-      value: Date.now(),
-    }));
+    // store.dispatch(setRuntimeVariable({
+    //   name: 'initialNow',
+    //   value: Date.now(),
+    // }));
     let css = new Set();
     let statusCode = 200;
     const data = { title: '', description: '', style: '', script: assets.main.js, children: '' };
@@ -85,7 +82,7 @@ app.get('*', async (req, res, next) => {
         css = new Set();
         statusCode = status;
         data.children = ReactDOM.renderToString(component);
-        data.state = store.getState();
+        data.state = store;
         data.style = [...css].join('');
         return true;
       },
