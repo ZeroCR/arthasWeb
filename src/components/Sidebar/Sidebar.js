@@ -5,6 +5,7 @@ import { observer } from 'mobx-react';
 
 const Sidebar = observer(['store'], ({ store }) =>
   <div>
+  test
     {store.app.title}
   </div>
 );

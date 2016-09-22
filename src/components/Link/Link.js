@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
 import { navigate } from '../../actions/route';
 
 function isLeftClickEvent(event) {
@@ -54,16 +53,10 @@ class Link extends Component { // eslint-disable-line react/prefer-stateless-fun
   };
 
   render() {
-    const { to, navigate: _, ...props } = this.props; // eslint-disable-line no-unused-vars
-    return <a href={this.context.createHref(to)} {...props} onClick={this.handleClick} />;
+    const { to } = this.props; // eslint-disable-line no-unused-vars
+    return <a href={this.context.createHref(to)} {...this.props} onClick={this.handleClick} />;
   }
 
 }
 
-const mapState = null;
-
-const mapDispatch = {
-  navigate,
-};
-
-export default connect(mapState, mapDispatch)(Link);
+export default Link;

@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Content.css';
+import User from '../../components/User/User.js';
 
 class Content extends Component {
 
@@ -23,9 +24,7 @@ class Content extends Component {
   render() {
     return (
       <div className={s.root}>
-        <div className={s.container}>
-          <h1>{this.props.title}</h1>
-        </div>
+        <User />
       </div>
     );
   }

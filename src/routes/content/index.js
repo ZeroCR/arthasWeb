@@ -24,7 +24,7 @@ export default {
   //   return <Content {...data.content} />;
   // },
   action() {
-    return <Content title="Content test" />;
+    return <Content title="Content test3" />;
   },
 
 };

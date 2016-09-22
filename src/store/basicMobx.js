@@ -4,7 +4,7 @@ import { observable, toJS, extendObservable } from 'mobx';
 // Default state structure
 const defaultState = observable({
   app: {
-    title: 'Mobx Isomorphic Starter 3',
+    title: 'Mobx Isomorphic Starter 7',
     description: 'Here goes description',
     host: '',
   },
